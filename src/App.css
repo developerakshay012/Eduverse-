@@ -2,7 +2,7 @@
 
 
 body{
-   background-color: #000814;
+   background-color: #1a2735;
 }
 
 .form-style {
@@ -12,7 +12,7 @@ body{
   padding: 12px; /* p-3 */
   border-radius: 8px; /* rounded-lg */
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.18);
-  border: 2px solid #2C333F;
+  border: 2px solid #2a303b;
 }
 
 /* Placeholder styling */

@@ -6,7 +6,10 @@
   "scripts": {
     "server": "npm run dev --prefix server",
     "frontend": "vite",
-    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run server\" \"npm run frontend\"",
+     "build": "vite build",
+  "preview": "vite preview",
+  "start": "vite preview"
   },
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.4.0",

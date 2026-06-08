@@ -76,8 +76,9 @@ const NavBar = () => {
   </div>
 
   {/* Right Side: 'Eduverse' Text */}
-  <span className="text-xl md:text-2xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+  <span className="text-xl md:text-2xl uppercase font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
     Eduverse
+    
   </span>
 
 </div>

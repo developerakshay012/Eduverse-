@@ -246,7 +246,7 @@ function  CourseDetailsPage() {
 
             {/* Author Details */}
             <div className="mb-12 py-4">
-              <p className="text-[28px] font-semibold">Author</p>
+              {/* <p className="text-[28px] font-semibold">Author</p>
               <div className="flex items-center gap-4 py-4">
                 <img
                   src={
@@ -258,7 +258,7 @@ function  CourseDetailsPage() {
                   className="h-14 w-14 rounded-full object-cover"
                 />
                 <p className="text-lg">{`${instructor.firstName} ${instructor.lastName}`}</p>
-              </div>
+              </div> */}
               <p className="text-gray-200">
                 {instructor?.additionalDetails?.about}
               </p>

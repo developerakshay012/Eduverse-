@@ -22,9 +22,10 @@ const Home = () => {
     <div>
         <div className=' mx-auto relative flex flex-col w-11/12 items-center justify-between text-white mt-10'>
             <Link to={"/signup"}>
-           <div className="group mt-16 p-1 mx-auto rounded-full bg-[#2C333F] font-bold transition-all duration-200 hover:scale-95 w-max">
+           <div className="group mt-16 p-1 mx-auto rounded-full bg-[#2e3642] font-bold transition-all duration-200 hover:scale-95 w-max">
                 <div className="flex items-center gap-2 rounded-full px-10 py-1.5 transition-all duration-200 group-hover:bg-[#161D29] text-gray-200">
                  <p>Become an Instructor</p>
+                 
                 <TbArrowRightRhombusFilled size={24} />
         </div>
 </div>
