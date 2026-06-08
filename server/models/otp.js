@@ -7,12 +7,10 @@ const OTPSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
   otp: {
     type: String,
     required: true,
   },
-  
   createdAt: {
     type: Date,
     default: Date.now,
@@ -28,22 +26,18 @@ async function sendVerificationEmail(email, otp) {
       "Verification Email",
       emailTemplate(otp)
     );
-    console.log(" Email sent:", response.messageId);
+    console.log("📩 Email sent:", response?.messageId || "Success");
   } catch (error) {
-    console.log(" Email sending failed:", error.message);
-    // Important: error throw nahi kar rahe taki DB save fail na ho
+    console.log("❌ Email sending failed:", error.message);
   }
 }
 
-//  Pre-save hook (NO next, async only)
+// Pre-save hook
 OTPSchema.pre("save", async function () {
-  // Only for new document
   if (this.isNew) {
     await sendVerificationEmail(this.email, this.otp);
   }
 });
 
-//  Prevent OverwriteModelError
-
-
-export default mongoose.model("OTP", OTPSchema);
+//  Model export with check to prevent OverwriteModelError
+export default mongoose.models.OTP || mongoose.model("OTP", OTPSchema);
