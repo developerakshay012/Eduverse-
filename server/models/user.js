@@ -87,4 +87,4 @@ const userSchema = new mongoose.Schema(
 
 
 // Export User model safely
-export default mongoose.models.User || mongoose.model("User", userSchema);
+export default  mongoose.model("User", userSchema);
