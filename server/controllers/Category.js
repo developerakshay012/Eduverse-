@@ -1,7 +1,7 @@
 // const Category = require("../models/Category");
 // const Course = require("../models/Course");
-import Course from "../models/course.js";
-import Category from "../models/category.js";
+import Course from "../models/Course.js";
+import Category from "../models/Category.js";
 
 export const createCategory = async (req, res) => {
 	try {

@@ -3,7 +3,7 @@
 // const ContactUs = require("../models/contact");
 
 import { contactUsEmail } from "../template/contactUsTemp.js";
-import ContactUs from "../models/contact.js";
+import ContactUs from "../models/Contact.js";
 import mailSender from "../utils/mailSender.js";
 
 export const contactUsController = async (req, res) => {

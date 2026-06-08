@@ -3,7 +3,7 @@
 // const Course = require("../models/Course");
 // const { uploadImageToCloudinary } = require("../utils/imageUploader");
 
-import Profile from "../models/profile.js";
+import Profile from "../models/Profile.js";
 import User from "../models/User.js";
 import Course from "../models/Course.js";
 import  uploadImageToCloudinary  from "../utils/uploadImageToCloudinary.js";

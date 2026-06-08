@@ -2,7 +2,7 @@
 // const Course = require("../models/Course");
 // const { default: mongoose } = require("mongoose");
 
-import RatingAndReview from '../models/ratingAndReviews.js'
+import RatingAndReview from '../models/RatingAndReviews.js'
 import Course from '../models/Course.js';
 import mongoose from 'mongoose';
 import User from '../models/User.js';
