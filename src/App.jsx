@@ -13,7 +13,6 @@ import Contact from "./Pages/Contact";
 import MyProfile from "./Components/Core/Dashboard/MyProfile";
 import PrivateRoute from "./Components/Core/Auth/PrivateRoute";
 import Dashboard from "./Pages/Dashboard";
-// import Settings from "./Components/Core/Dashboard/Setting";
 import Setting from "./Components/Core/Dashboard/Setting/Setting";
 import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourse";
 import { useSelector } from "react-redux";
@@ -24,11 +23,12 @@ import AddCourse from "./Components/Core/Dashboard/AddCourse/AddCourse";
 import EditCourse from "./Components/Core/Dashboard/EditCourse/EditCourse";
 import Catalog from "./Pages/Catalog";
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
-import ViewCourseDetails from './Pages/ViewCourseDetails'
+import ViewCourseDetails from './Pages/ViewCourseDetails';
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/Instructor/Instructor";
-import NavBar from "./Components/Common/NavBar";
 
+// Sahi casing ke sath sirf ek baar NavBar import karein
+import NavBar from "./Components/Common/NavBar";
 
 function App() {
 
