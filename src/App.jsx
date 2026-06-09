@@ -8,13 +8,11 @@ import Error from "./Pages/Error";
 import VerifyEmail from "./Pages/VerifyEmail";
 import UpdatePassword from "./Pages/UpdatePassword";
 import ForgotPassword from "./Pages/ForgotPassword";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
 import MyProfile from "./Components/Core/Dashboard/MyProfile";
 import PrivateRoute from "./Components/Core/Auth/PrivateRoute";
 import Dashboard from "./Pages/Dashboard";
 import Setting from "./Components/Core/Dashboard/Setting/Setting";
-import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourses";
+import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourses"; // 'EnrolledCourses' with capital E, C and 's' at end
 import { useSelector } from "react-redux";
 import { ACCOUNT_TYPE } from "./Utils/Constants";
 import Cart from "./Components/Core/Dashboard/Cart/Cart";
@@ -26,7 +24,6 @@ import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import ViewCourseDetails from './Pages/ViewCourseDetails';
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/Instructor/Instructor";
-
 import NavBar from "./Components/Common/NavBar";
 
 function App() {

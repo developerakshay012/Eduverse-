@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import logo from "../../assets/Logo/Logo2.png";
 import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
 import { NavbarLinks } from "../../data/navbar-links";
 import { useSelector, useDispatch } from "react-redux";
