@@ -1,19 +1,20 @@
-import React from 'react'
-import {FaArrowRight} from 'react-icons/fa';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import { PiArrowBendUpRightBold } from "react-icons/pi";
+import { Link } from 'react-router-dom';
+
 import CTAButton from '../Components/Core/HomePage/Button';
 import HighlightText from '../Components/Core/HomePage/HighlightText';
-import Banner from "../assets/Images/banner.mp4"
 import CodeBlocks from "../Components/Core/HomePage/CodeBlocks";
 import TimelineSection from '../Components/Core/HomePage/TimelineSection';
-import LearningLanguageSection from '../Components/Core/HomePage/LearningLanguageSection    ';
+import LearningLanguageSection from '../Components/Core/HomePage/LearningLanguageSection';
 import InstructorSection from '../Components/Core/HomePage/InstructorSection';
 import ExploreMore from '../Components/Core/HomePage/ExploreMore';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import  Footer  from '../Components/Common/Footer';
-import { PiArrowBendUpRightBold } from "react-icons/pi";
+
 import ReviewSlider from '../Components/Common/ReviewSlider';
+import Footer from '../Components/Common/Footer';
+
+import Banner from "../assets/Images/banner.mp4";
 
 
 const Home = () => {
