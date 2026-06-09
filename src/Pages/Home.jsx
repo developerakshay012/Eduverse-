@@ -12,7 +12,7 @@ import ExploreMore from '../Components/core/HomePage/ExploreMore';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import  Footer  from '../Components/Common/Footer';
-import { TbArrowRightRhombusFilled } from "react-icons/tb";
+import { PiArrowBendUpRightBold } from "react-icons/pi";
 import ReviewSlider from '../Components/Common/ReviewSlider';
 
 
@@ -26,7 +26,7 @@ const Home = () => {
                 <div className="flex items-center gap-2 rounded-full px-10 py-1.5 transition-all duration-200 group-hover:bg-[#161D29] text-gray-200">
                  <p>Become an Instructor</p>
                  
-                <TbArrowRightRhombusFilled size={24} />
+                <PiArrowBendUpRightBold size={24} />
         </div>
 </div>
             </Link>
