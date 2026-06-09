@@ -27,7 +27,7 @@ import ViewCourseDetails from './Pages/ViewCourseDetails';
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/Instructor/Instructor";
 
-// Sahi casing ke sath sirf ek baar NavBar import karein
+// Sirf yeh EK baar rahega, baaki saare NavBar ke imports delete kar do
 import NavBar from "./Components/Common/NavBar";
 
 function App() {
