@@ -14,7 +14,7 @@ import MyProfile from "./Components/Core/Dashboard/MyProfile";
 import PrivateRoute from "./Components/Core/Auth/PrivateRoute";
 import Dashboard from "./Pages/Dashboard";
 import Setting from "./Components/Core/Dashboard/Setting/Setting";
-import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourse";
+import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourses";
 import { useSelector } from "react-redux";
 import { ACCOUNT_TYPE } from "./Utils/Constants";
 import Cart from "./Components/Core/Dashboard/Cart/Cart";
@@ -27,7 +27,6 @@ import ViewCourseDetails from './Pages/ViewCourseDetails';
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/Instructor/Instructor";
 
-// Sirf yeh EK baar rahega, baaki saare NavBar ke imports delete kar do
 import NavBar from "./Components/Common/NavBar";
 
 function App() {
