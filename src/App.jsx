@@ -27,7 +27,7 @@ import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import ViewCourseDetails from './Pages/ViewCourseDetails'
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/Instructor/Instructor";
-import NavBar from "./Components/Common/Navbar";
+import NavBar from "./Components/Common/NavBar";
 
 
 function App() {
