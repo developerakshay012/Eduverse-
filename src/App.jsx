@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
-import NavBar from './Components/Common/NavBar'
 import OpenRoute from "./Components/Core/Auth/OpenRoute";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
@@ -28,6 +27,7 @@ import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import ViewCourseDetails from './Pages/ViewCourseDetails'
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/Instructor/Instructor";
+import NavBar from "./Components/Common/Navbar";
 
 
 function App() {
