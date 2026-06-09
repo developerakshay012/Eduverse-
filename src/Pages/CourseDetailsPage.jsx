@@ -11,7 +11,7 @@ import RatingStars from "../components/common/RatingStar"
 import CourseAccordionBar from "../Components/Core/Course/CourseAccordionBar"
 import CourseDetailsCard from "../components/core/Course/CourseDetailsCard"
 import { formattedDate } from "../Utils/formattedDate"
-import { fetchCourseDetails } from "../Services/Operations/courseDetailsAPI"
+import { fetchCourseDetails } from "@/Services/Operations/courseDetailsAPI";
 import { buyCourse } from "../Services/Operations/studentFeatureApi"
 import GetAvgRating from "../utils/avgRating"
 import Error from "./Error"
