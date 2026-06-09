@@ -9,7 +9,7 @@ import ReactStarsModule from 'react-stars'
 const ReactStars = ReactStarsModule.default || ReactStarsModule
 
 // Imported the API utility to handle the form data dispatch
-import { createRating } from "../../../services/operations/courseDetailsAPI"
+import { createRating } from "../../../Services/Operations/courseDetailsAPI"
 
 const CourseReviewModal = ({ setReviewModal }) => {
   const { user } = useSelector((state) => state.profile)
