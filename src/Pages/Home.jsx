@@ -2,12 +2,12 @@ import React from 'react'
 import {FaArrowRight} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import CTAButton from '../Components/Core/HomePage/Button';
-import HighlightText from '../Components/core/HomePage/HighlightText';
+import HighlightText from '../Components/Core/HomePage/HighlightText';
 import Banner from "../assets/Images/banner.mp4"
 import CodeBlocks from "../Components/core/HomePage/CodeBlocks";
-import TimelineSection from '../Components/core/HomePage/TimelineSection';
-import LearningLanguageSection from '../Components/core/HomePage/LearningLanguageSection';
-import InstructorSection from '../Components/core/HomePage/InstructorSection';
+import TimelineSection from '../Components/Core/HomePage/TimelineSection';
+import LearningLanguageSection from '../Components/Core/HomePage/LearningLanguageSection';
+import InstructorSection from '../Components/Core/HomePage/InstructorSection';
 import ExploreMore from '../Components/core/HomePage/ExploreMore';
 import { useEffect } from 'react';
 import { useState } from 'react';
