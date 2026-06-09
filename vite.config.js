@@ -9,5 +9,8 @@ export default defineConfig({
     watch: {
       usePolling: true
     }
+  },
+  build: {
+    chunkSizeWarningLimit: 4000 // Yeh warning limit ko 4MB kar dega (jo 500kb par aa rahi thi)
   }
 })

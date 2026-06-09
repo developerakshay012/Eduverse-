@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
-import NavBar from "./Components/Common/NavBar";
+import NavBar from './Components/Common/NavBar'
 import OpenRoute from "./Components/Core/Auth/OpenRoute";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
