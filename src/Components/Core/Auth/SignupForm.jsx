@@ -5,7 +5,7 @@
   import { AiFillEyeInvisible } from "react-icons/ai";
   import { IoEye } from "react-icons/io5";
 
-  import { sendOtp } from "../../../Services/operations/authApi"
+  import { sendOtp } from "../../../Services/Operations/authApi"
   import { setSignupData } from "../../../Slices/authSlice"
   import { ACCOUNT_TYPE } from "../../../Utils/constants"
   import Tab from "../../Common/Tab"
