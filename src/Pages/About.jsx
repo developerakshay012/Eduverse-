@@ -5,9 +5,9 @@ import BannerImage2 from "../assets/Images/aboutus2.webp"
 import BannerImage3 from "../assets/Images/aboutus3.webp"
 import ContactFormSection from "../Components/Core/AboutPage/ContactFormSection"
 import Quote from '../Components/Core/AboutPage/Quote'
-import HighlightText from "../components/core/HomePage/HighlightText"
+import HighlightText from "../Components/Core/HomePage/HighlightText"
 import Footer from "../Components/Common/Footer"
-import LearningGrid from "../Components/Core/AboutPage/learnningGrid"
+import LearningGrid from "../Components/Core/AboutPage/LearningGrid"
 import StatsComponenet from "../Components/Core/AboutPage/StatsComponents"
 import ReviewSlider from "../Components/Common/ReviewSlider"
 
