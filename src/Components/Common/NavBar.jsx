@@ -7,7 +7,7 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineCaretDown } from "react-icons/a
 import { VscDashboard, VscSignOut } from "react-icons/vsc";
 
 import useOnClickOutside from "../../Hooks/useOnClickOutside";
-import { logout } from "../../Services/Operations/authAPI";
+import { logout } from "../../Services/Operations/authApi";
 import { categories } from "../../Services/apis";
 import { apiConnector } from "../../Services/apiConnector";
 

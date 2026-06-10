@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { TiArrowBackOutline } from "react-icons/ti";
-import { getPasswordResetToken } from "../Services/Operations/authAPI"
+import { getPasswordResetToken } from "../Services/Operations/authApi"
 import { AiOutlineHistory } from "react-icons/ai";
 
 
