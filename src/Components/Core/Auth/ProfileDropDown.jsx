@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import useOnClickOutside from "../../../Hooks/useOnClickOutside";
-import { logout } from "../../../Services/Operations/authAPI";
+import { logout } from "../../../Services/Operations/authApi";
 
 function ProfileDropdown() {
   const { user } = useSelector((state) => state.profile);

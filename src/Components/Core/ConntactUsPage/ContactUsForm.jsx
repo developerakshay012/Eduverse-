@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import CountryCode from "../../../data/countrycode.json";
-import { apiConnector } from "../../../Services/apiconnector";
+import { apiConnector } from "../../../Services/apiConnector";
 import { contactusEndpoint } from "../../../Services/apis";
 import toast from "react-hot-toast";
 

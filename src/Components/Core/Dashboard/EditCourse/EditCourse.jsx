@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import RenderSteps from '../AddCourse/RenderSteps.jsx'
-import { getFullDetailsOfCourse } from '../../../../Services/Operations/courseDetailsAPI'
+import { getFullDetailsOfCourse } from '../../../../Services/Operations/courseDetailsApi'
 import { setCourse, setEditCourse } from '../../../../Slices/courseSlice'
 
 

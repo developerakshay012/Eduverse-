@@ -14,8 +14,8 @@ import { formattedDate } from "../../../../Utils/formattedDate"
 import {
   deleteCourse,
   fetchInstructorCourses,
-} from "../../../../Services/Operations/courseDetailsAPI"
-import { COURSE_STATUS } from "../../../../Utils/constants"
+} from "../../../../Services/Operations/courseDetailsApi"
+import { COURSE_STATUS } from "../../../../Utils/Constants"
 import ConfirmationModal from "../../../Common/ConfirmationModal"
 
 const   CoursesTable = ({ courses, setCourses })  =>{

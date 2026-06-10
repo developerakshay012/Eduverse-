@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { IoEye } from "react-icons/io5";
 
-import { login } from "../../../Services/Operations/authAPI"
+import { login } from "../../../Services/Operations/authApi"
 
 
 function LoginForm() {

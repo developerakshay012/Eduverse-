@@ -5,15 +5,15 @@ import ReactMarkdown from "react-markdown";
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 
-import ConfirmationModal from "../components/common/ConfirmationModal"
-import Footer from "../components/common/Footer"
-import RatingStars from "../components/common/RatingStar"
+import ConfirmationModal from "../Components/Common/ConfirmationModal"
+import Footer from "../Components/Common/Footer"
+import RatingStars from "../Components/Common/RatingStar"
 import CourseAccordionBar from "../Components/Core/Course/CourseAccordionBar"
-import CourseDetailsCard from "../components/core/Course/CourseDetailsCard"
+import CourseDetailsCard from "../Components/Core/Course/CourseDetailsCard"
 import { formattedDate } from "../Utils/formattedDate"
-import { fetchCourseDetails } from "../services/operations/courseDetailsAPI"
+import { fetchCourseDetails } from "../Services/Operations/courseDetailsApi"
 import { buyCourse } from "../Services/Operations/studentFeatureApi"
-import GetAvgRating from "../utils/avgRating"
+import GetAvgRating from "../Utils/avgRating"
 import Error from "./Error"
 
 function  CourseDetailsPage() {

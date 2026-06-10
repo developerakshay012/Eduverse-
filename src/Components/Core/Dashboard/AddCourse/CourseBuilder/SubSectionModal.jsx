@@ -7,7 +7,7 @@
   import {
     createSubSection,
     updateSubSection,
-  } from "../../../../../Services/Operations/courseDetailsAPI"
+  } from "../../../../../Services/Operations/courseDetailsApi"
   import { setCourse } from "../../../../../Slices/courseSlice"
   import IconBtn from "../../../../Common/IconBtn"
   import Upload from "../Upload"

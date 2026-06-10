@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams, useLocation } from "react-router-dom"
-import { markLectureAsComplete } from "../../../Services/Operations/courseDetailsAPI"
+import { markLectureAsComplete } from "../../../Services/Operations/courseDetailsApi"
 import { updateCompletedLectures } from "../../../Slices/viewCourseSlice"
 import IconBtn from "../../Common/IconBtn"
 

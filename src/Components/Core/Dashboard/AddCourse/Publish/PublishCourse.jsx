@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
-import { editCourseDetails } from "../../../../../Services/Operations/courseDetailsAPI"
+import { editCourseDetails } from "../../../../../Services/Operations/courseDetailsApi"
 import { resetCourseState, setStep } from "../../../../../Slices/courseSlice"
 import { COURSE_STATUS } from "../../../../../Utils/constants"
 import IconBtn from "../../../../Common/IconBtn"
