@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { deleteProfile } from "../../../../Services/Operations/settingApi"
 
-// import { deleteProfile } from "../../../../services/operations/SettingsAPI"
-
  function DeleteAccount() {
   const { token } = useSelector((state) => state.auth)
   const dispatch = useDispatch()

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 
 import { editCourseDetails } from "../../../../../Services/Operations/courseDetailsApi"
 import { resetCourseState, setStep } from "../../../../../Slices/courseSlice"
-import { COURSE_STATUS } from "../../../../../Utils/constants"
+import { COURSE_STATUS } from "../../../../../Utils/Constants"
 import IconBtn from "../../../../Common/IconBtn"
 
 const PublishCourse = () => {

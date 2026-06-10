@@ -7,7 +7,7 @@
 
   import { sendOtp } from "../../../Services/Operations/authApi"
   import { setSignupData } from "../../../Slices/authSlice"
-  import { ACCOUNT_TYPE } from "../../../Utils/constants"
+  import { ACCOUNT_TYPE } from "../../../Utils/Constants"
   import Tab from "../../Common/Tab"
 
 

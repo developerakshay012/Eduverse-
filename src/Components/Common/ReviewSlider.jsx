@@ -17,7 +17,7 @@ import { Autoplay, FreeMode, Pagination } from "swiper/modules"
 
 // Get apiFunction and the endpoint
 import { apiConnector } from "../../Services/apiConnector"
-import { ratingsEndpoints } from "../../services/apis"
+import { ratingsEndpoints } from "../../Services/apis"
 
 function ReviewSlider() {
   const [reviews, setReviews] = useState([])
