@@ -17,8 +17,12 @@ export default defineConfig({
         manualChunks(id) {
           // Ye line saari badi external libraries (react-icons, redux etc.) ko alag-alag chhote chunks me tod degi
           if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString();
+            const parts = id.toString().split('node_modules/');
+            if (parts[1]) {
+              return parts[1].split('/')[0].toString();
+            }
           }
+          // Default fallback: return nothing so Rollup handles local files normally
         }
       }
     }
