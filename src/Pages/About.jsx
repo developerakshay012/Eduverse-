@@ -8,8 +8,8 @@ import Quote from '../Components/Core/AboutPage/Quote'
 import HighlightText from "../Components/Core/HomePage/HighlightText"
 import Footer from "../Components/Common/Footer"
 import LearningGrid from "../Components/Core/AboutPage/LearningGrid"
-import StatsComponenet from "../Components/Core/AboutPage/StatsComponents"
 import ReviewSlider from "../Components/Common/ReviewSlider"
+import StatsComponenets from "../Components/Core/AboutPage/StatsComponents"
 
 
 const About = () => {
@@ -103,7 +103,7 @@ const About = () => {
         </div>
       </section>
 
-      <StatsComponenet />
+      <StatsComponenets />
       <section className="mx-auto mt-20 flex w-11/12 max-w-315 flex-col justify-between gap-10 text-white">
         <LearningGrid />
         <ContactFormSection />
