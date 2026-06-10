@@ -2,7 +2,7 @@ import { toast } from "react-hot-toast"
 
 import { updateCompletedLectures } from "../../Slices/viewCourseSlice"
 
-import { apiConnector } from "../apiconnector"
+import { apiConnector } from "../apiConnector"
 import { courseEndpoints } from "../apis"
 
 const {

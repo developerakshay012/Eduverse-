@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast";
 import { studentEndpoints } from "../apis";
-import { apiConnector } from "../apiconnector";
+import { apiConnector } from "../apiConnector";
 import rzpLogo from "../../assets/Images/rzplog.png"; // 👈 Aapka naya Eduverse logo asset
 import { setPaymentLoading } from "../../Slices/courseSlice";
 import { resetCart } from "../../Slices/cartSlice";
