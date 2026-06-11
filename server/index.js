@@ -14,7 +14,7 @@
   import proRouter from "./routes/Profile.js";
   import courseRouter from "./routes/Course.js";
   import conRouter from "./routes/ContactUs.js";
-import payRouter from "./routes/Payments.js";
+  import payRouter from "./routes/Payments.js";
 
   const app = express();
 
