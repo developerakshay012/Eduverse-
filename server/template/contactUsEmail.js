@@ -74,11 +74,11 @@ const contactUsEmail = (
     
     <body>
         <div class="container">
-            <a href="https://studynotion-edtech-project.vercel.app">
+            <a href="https://eduverse-v1st.vercel.app">
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
     <tr>
         <td align="center">
-            <a href="https://studynotion-edtech-project.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
+            <a href="https://eduverse-v1st.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffd60a; border-radius: 8px; padding: 10px 24px;">
                     <tr>
                         <td style="padding-right: 10px;">

@@ -14,11 +14,11 @@ const courseEnrollmentEmail = (courseName, name) => {
                         
                         <tr>
                             <td align="center" style="padding: 30px 40px 10px 40px;">
-                                <a href="https://studynotion-edtech-project.vercel.app" target="_blank" style="text-decoration: none;">
+                                <a href="https://eduverse-v1st.vercel.app" target="_blank" style="text-decoration: none;">
                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
     <tr>
         <td align="center">
-            <a href="https://studynotion-edtech-project.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
+            <a href="https://eduverse-v1st.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffd60a; border-radius: 8px; padding: 10px 24px;">
                     <tr>
                         <td style="padding-right: 10px;">
@@ -74,7 +74,7 @@ const courseEnrollmentEmail = (courseName, name) => {
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
                                         <td align="center" style="padding-bottom: 15px;">
-                                            <a href="https://studynotion-edtech-project.vercel.app/dashboard" target="_blank" style="background-color: #ffd60a; color: #000814; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3); transition: all 0.2s ease;">
+                                            <a href="https://eduverse-v1st.vercel.app/dashboard" target="_blank" style="background-color: #ffd60a; color: #000814; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3); transition: all 0.2s ease;">
                                                 Go to Dashboard
                                             </a>
                                         </td>
@@ -87,7 +87,7 @@ const courseEnrollmentEmail = (courseName, name) => {
                             <td style="padding: 20px 40px 40px 40px; background-color: #101622; border-top: 1px solid #2c333f; text-align: center;">
                                 <p style="margin: 0; color: #6e727f; font-size: 13px; line-height: 1.5;">
                                     If you have any questions or need setup assistance, please reach out to us at 
-                                    <a href="mailto:info@studynotion.com" style="color: #ffd60a; text-decoration: none; font-weight: 600;">info@studynotion.com</a>
+                                    <a href="mailto:info@eduverse.com" style="color: #ffd60a; text-decoration: none; font-weight: 600;">info@studynotion.com</a>
                                 </p>
                                 <p style="margin: 15px 0 0 0; color: #424656; font-size: 12px;">
                                     &copy; 2026 Eduverse. All Rights Reserved.

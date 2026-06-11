@@ -14,7 +14,7 @@ const emailTemplate = (otp, name = "User") => {
                       
                       <tr>
                           <td align="center" style="padding: 30px 40px 10px 40px;">
-                              <a href="https://studynotion-edtech-project.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
+                              <a href="https://eduverse-v1st.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
                                   <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffd60a; border-radius: 8px; padding: 10px 24px;">
                                       <tr>
                                           <td style="padding-right: 10px;">
@@ -62,7 +62,7 @@ const emailTemplate = (otp, name = "User") => {
                               <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                   <tr>
                                       <td align="center" style="padding-bottom: 15px;">
-                                          <a href="https://studynotion-edtech-project.vercel.app/verify-email" target="_blank" style="background-color: #ffd60a; color: #000814; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3); transition: all 0.2s ease;">
+                                          <a href="https://eduverse-v1st.vercel.app/verify-email" target="_blank" style="background-color: #ffd60a; color: #000814; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3); transition: all 0.2s ease;">
                                               Verify Account
                                           </a>
                                       </td>

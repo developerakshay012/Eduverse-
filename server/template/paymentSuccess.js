@@ -17,11 +17,11 @@ const paymentSuccess = (amount, paymentId, orderId, name, lastname) => {
                         
                         <tr>
                             <td align="center" style="padding: 30px 40px 10px 40px;">
-                                <a href="https://studynotion-edtech-project.vercel.app" target="_blank" style="text-decoration: none;">
+                                <a href="https://eduverse-v1st.vercel.app" target="_blank" style="text-decoration: none;">
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
     <tr>
         <td align="center">
-            <a href="https://studynotion-edtech-project.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
+            <a href="https://eduverse-v1st.vercel.app" target="_blank" style="text-decoration: none; display: inline-block;">
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffd60a; border-radius: 8px; padding: 10px 24px;">
                     <tr>
                         <td style="padding-right: 10px;">
@@ -83,7 +83,7 @@ const paymentSuccess = (amount, paymentId, orderId, name, lastname) => {
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
                                         <td align="center" style="padding-bottom: 15px;">
-                                            <a href="https://studynotion-edtech-project.vercel.app/dashboard/enrolled-courses" target="_blank" style="background-color: #ffd60a; color: #000814; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3); transition: all 0.2s ease;">
+                                            <a href="https://eduverse-v1st.vercel.app/dashboard/enrolled-courses" target="_blank" style="background-color: #ffd60a; color: #000814; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 32px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3); transition: all 0.2s ease;">
                                                 Go to Dashboard
                                             </a>
                                         </td>

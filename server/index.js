@@ -36,7 +36,7 @@
 
 
   app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://eduverse-v1st.vercel.app",
     credentials: true
   }))
 

@@ -298,7 +298,7 @@ export const changePassword = async (req, res) => {
     try {
       const emailResponse = await mailSender(
         updatedUserDetails.email,
-        "SmartEdTech - Password Updated",
+        "Eduverse - Password Updated",
         passwordUpdated(
           updatedUserDetails.email,
           `Password updated successfully for 
