@@ -111,7 +111,7 @@ const CourseReviewModal = ({ setReviewModal }) => {
               >
                 Cancel
               </button>
-              <IconBtn text="Save" />
+              <IconBtn text="Save" type="submit" />
             </div>
           </form>
         </div>

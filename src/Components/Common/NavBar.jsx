@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { TiShoppingCart, TiArrowSortedDown } from "react-icons/ti";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineCaretDown } from "react-icons/ai";
 import { VscDashboard, VscSignOut } from "react-icons/vsc";
-
+import logo from '../../assets/Images/logog.png'
 import useOnClickOutside from "../../Hooks/useOnClickOutside";
 import { logout } from "../../Services/Operations/authApi";
 import { categories } from "../../Services/apis";
@@ -22,6 +22,8 @@ const NavBar = () => {
   const [loading, setLoading] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  // Mobile par catalog open karne ke liye state
+  const [mobileCatalogOpen, setMobileCatalogOpen] = useState(false);
 
   const location = useLocation();
   const dropdownRef = useRef(null);
@@ -56,6 +58,7 @@ const NavBar = () => {
   useEffect(() => {
     setMobileMenuOpen(false);
     setProfileDropdownOpen(false);
+    setMobileCatalogOpen(false); // Route change hote hi closed ho jaye
   }, [location.pathname]);
 
   return (
@@ -65,131 +68,184 @@ const NavBar = () => {
         {/* 1. LOGO */}
         <Link to="/" className="z-[1010]">
           {/* ====== EDUVERSE PREMIUM TEXT LOGO ====== */}
-<div className="flex items-center gap-x-2 font-sans tracking-wide select-none">
-  
-  {/* Left Side: 'E' Icon inside Circle */}
-  <div className="flex h-7 w-7 md:h-9 md:w-9 items-center justify-center rounded-full bg-white shadow-[0_0_15px_rgba(255,214,10,0.3)]">
-    <span className="text-base md:text-xl font-black text-black">
-      E
-    </span>
-  </div>
-
-  {/* Right Side: 'Eduverse' Text */}
-  <span className="text-xl md:text-2xl uppercase font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-    Eduverse
-    
-  </span>
-
-</div>
+          <div className="flex items-center gap-x-2 font-sans tracking-wide select-none">
+            {/* Left Side: 'E' Icon inside Circle */}
+              <img src={logo} alt="imgLogo" height ={250} width={304}/>
+          </div>
         </Link>
 
-        {/* 2. NAVIGATION SIDEBAR MENU (Baki sab items small screen me iske andar dikhenge) */}
-        <nav
-          className={`fixed md:relative top-0 left-0 h-screen md:h-auto w-full md:w-auto bg-[#000814] md:bg-transparent z-[1000] md:z-auto transition-all duration-300 md:opacity-100 md:visible flex flex-col md:flex-row items-center justify-center
-          ${mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible md:flex"}`}
-        >
-          <ul className="flex flex-col md:flex-row gap-y-6 md:gap-y-0 md:gap-x-6 text-[#DBDDEA] text-lg md:text-base font-medium items-center w-full md:w-auto px-6 md:px-0 max-h-[80vh] overflow-y-auto md:overflow-visible">
-            
-            {NavbarLinks.map((link, index) => (
-              <li key={index} className="w-full md:w-auto text-center md:text-left">
-                {link.title === "Catalog" ? (
-                  <div className="group relative flex flex-col md:flex-row cursor-pointer items-center justify-center gap-1 py-2 md:py-0">
-                    <span className="flex items-center gap-1 hover:text-yellow-300 transition-colors">
-                      {link.title}
-                      <TiArrowSortedDown className="transition-transform group-hover:rotate-180 duration-200" />
-                    </span>
+        {/* 2. NAVIGATION SIDEBAR MENU */}
+       {/* 2. NAVIGATION SIDEBAR MENU */}
+<nav
+  className={`fixed md:relative top-0 left-0 h-screen md:h-auto w-full md:w-auto bg-[#000814] md:bg-transparent z-[1000] md:z-auto transition-all duration-300 md:opacity-100 md:visible flex flex-col md:flex-row items-center justify-center
+  ${mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible md:flex"}`}
+>
+  <ul className="flex flex-col md:flex-row gap-y-6 md:gap-y-0 md:gap-x-6 text-[#DBDDEA] text-lg md:text-base font-medium items-center w-full md:w-auto px-6 md:px-0 max-h-[85vh] overflow-y-auto md:overflow-visible">
+    
+    {NavbarLinks.map((link, index) => (
+      <li
+        key={index}
+        className="w-full md:w-auto text-center md:text-left"
+      >
+        {link.title === "Catalog" ? (
+          <>
+            {/* ================= DESKTOP CATALOG ================= */}
+            <div className="hidden md:flex group relative flex-col cursor-pointer items-center justify-center py-2 md:py-0">
+              
+              {/* Catalog Header */}
+              <span className="flex items-center gap-1 hover:text-yellow-300 transition-colors">
+                {link.title}
+                <TiArrowSortedDown className="transition-transform duration-200 group-hover:rotate-180" />
+              </span>
 
-                    {/* Catalog Dropdown Panel */}
-                    <div className="invisible absolute left-1/2 top-[80%] z-[1100] pt-4 pb-5 flex w-[300px] md:w-80 -translate-x-1/2 flex-col rounded-md opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:top-full">
-                      <div className="absolute left-1/2 top-2 h-4 w-4 -translate-x-1/2 rotate-45 bg-[#2C333F] hidden md:block z-[-1]" />
-                      <div className="bg-[#2C333F] p-3 md:p-4 rounded-md shadow-2xl border border-zinc-700/50 mt-1">
-                        {loading ? (
-                          <p className="text-center text-sm text-gray-300 py-2">Loading...</p>
-                        ) : sublinks.length > 0 ? (
-                          sublinks.map((sublink, i) => (
-                            <Link
-                              key={i}
-                              to={`/catalog/${sublink?.name?.split(" ").join("-").toLowerCase()}`}
-                              className="block"
-                            >
-                              <p className="rounded-md px-4 py-5  text-sm font-semibold text-gray-200 transition-all duration-150 hover:bg-zinc-800 hover:text-yellow-300">
-                                {sublink?.name}
-                              </p>
-                            </Link>
-                          ))
-                        ) : (
-                          <p className="text-center text-sm text-gray-300 py-2">No Categories Found</p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <Link to={link.path} className="block py-2 md:py-0">
-                    <p className={`transition-colors duration-200 hover:text-yellow-300 ${matchRoute(link.path) ? "text-yellow-300 font-bold" : "text-white"}`}>
-                      {link.title}
+              {/* Dropdown */}
+              <div className="invisible absolute left-1/2 top-[80%] z-[1100] flex w-80 -translate-x-1/2 flex-col rounded-md opacity-0 transition-all duration-200 group-hover:visible group-hover:top-full group-hover:opacity-100 pt-4 pb-5">
+                
+                <div className="absolute left-1/2 top-2 h-4 w-4 -translate-x-1/2 rotate-45 bg-[#2C333F] z-[-1]" />
+
+                <div className="bg-[#2C333F] p-4 rounded-md shadow-2xl border border-zinc-700/50 w-full">
+                  
+                  {loading ? (
+                    <p className="text-center text-sm text-gray-300 py-2">
+                      Loading...
                     </p>
-                  </Link>
-                )}
-              </li>
-            ))}
-            
-            {/* ====== SMALL SCREEN INNER SECTION (Auth & Profile) ====== */}
-            <li className="flex flex-col gap-3 w-full max-w-[240px] mt-4 border-t border-zinc-800/80 pt-6 md:hidden">
-              {/* Login / Signup sirf tab jab token null ho */}
-              {token === null && (
-                <>
-                  <Link to="/login" className="w-full">
-                    <button className="w-full rounded-md border border-[#2C333F] bg-[#161D29] py-3.5 text-[#AFB2BF] font-semibold text-sm cursor-pointer">
-                      Login
-                    </button>
-                  </Link>
-                  <Link to="/signup" className="w-full">
-                    <button className="w-full rounded-md border border-[#2C333F] bg-[#161D29] py-3.5 text-[#AFB2BF] font-semibold text-sm cursor-pointer">
-                      Signup
-                    </button>
-                  </Link>
-                </>
-              )}
-
-              {/* Profile details and items inside nav slider container */}
-              {token !== null && user && (
-                <div className="flex flex-col gap-2 w-full text-left">
-                  {/* User Badge Info Box */}
-                  <div className="flex items-center gap-x-3 px-3 py-2.5 bg-zinc-900 rounded-lg mb-2 border border-zinc-800">
-                    <img
-                      src={user?.image}
-                      alt={`profile-${user?.firstName}`}
-                      className="aspect-square w-8 rounded-full object-cover border border-zinc-700"
-                    />
-                    <span className="text-sm font-semibold text-zinc-200 truncate flex-1">
-                      {user?.firstName} {user?.lastName}
-                    </span>
-                  </div>
-                  
-                  <Link to="/dashboard/my-profile" className="flex items-center gap-x-2 py-2.5 px-3 text-sm text-[#AFB2BF] hover:bg-[#2C333F] rounded-md transition-all">
-                    <VscDashboard className="text-lg text-yellow-400" />
-                    Dashboard
-                  </Link>
-                  
-                  <button
-                    onClick={() => dispatch(logout(navigate))}
-                    className="flex items-center gap-x-2 py-2.5 px-3 text-sm text-[#AFB2BF] hover:bg-rose-950/40 hover:text-rose-400 rounded-md transition-all text-left w-full"
-                  >
-                    <VscSignOut className="text-lg text-rose-500" />
-                    Logout
-                  </button>
+                  ) : sublinks.length > 0 ? (
+                    sublinks.map((sublink, i) => (
+                      <Link
+                        key={i}
+                        to={`/catalog/${sublink?.name
+                          ?.split(" ")
+                          .join("-")
+                          .toLowerCase()}`}
+                        className="block"
+                      >
+                        <p className="rounded-md px-4 py-4 text-sm font-semibold text-gray-200 transition-all duration-150 hover:bg-zinc-800 hover:text-yellow-300">
+                          {sublink?.name}
+                        </p>
+                      </Link>
+                    ))
+                  ) : (
+                    <p className="text-center text-sm text-gray-300 py-2">
+                      No Categories Found
+                    </p>
+                  )}
                 </div>
-              )}
-            </li>
-            {/* ======================================================== */}
+              </div>
+            </div>
 
-          </ul>
-        </nav>
+            {/* ================= MOBILE DIRECT CATEGORIES ================= */}
+            <div className="flex md:hidden flex-col w-full items-center">
+              
+              {/* Catalog Heading */}
+              <p className="text-white font-semibold py-2 text-lg">
+                Catalog
+              </p>
 
-        {/* 3. TOP STICKY CONTROLS AREA (Small Screen par sirf Cart aur Menu dikhega) */}
+              {/* Categories */}
+              <div className="flex flex-col w-full gap-1 mt-2">
+                
+                {loading ? (
+                  <p className="text-sm text-gray-400 text-center">
+                    Loading...
+                  </p>
+                ) : sublinks.length > 0 ? (
+                  sublinks.map((sublink, i) => (
+                    <Link
+                      key={i}
+                      to={`/catalog/${sublink?.name
+                        ?.split(" ")
+                        .join("-")
+                        .toLowerCase()}`}
+                      className="w-full"
+                    >
+                      <p className="py-2 text-sm text-gray-300 hover:text-yellow-300 transition-all text-center border-b border-zinc-800">
+                        {sublink?.name}
+                      </p>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-sm text-gray-400 text-center">
+                    No Categories Found
+                  </p>
+                )}
+              </div>
+            </div>
+          </>
+        ) : (
+          <Link to={link.path} className="block py-2 md:py-0">
+            <p
+              className={`transition-colors duration-200 hover:text-yellow-300 ${
+                matchRoute(link.path)
+                  ? "text-yellow-300 font-bold"
+                  : "text-white"
+              }`}
+            >
+              {link.title}
+            </p>
+          </Link>
+        )}
+      </li>
+    ))}
+
+    {/* ====== SMALL SCREEN INNER SECTION (Auth & Profile) ====== */}
+    <li className="flex flex-col gap-3 w-full max-w-[240px] mt-4 border-t border-zinc-800/80 pt-6 md:hidden">
+      
+      {token === null && (
+        <>
+          <Link to="/login" className="w-full">
+            <button className="w-full rounded-md border border-[#2C333F] bg-[#161D29] py-3.5 text-[#AFB2BF] font-semibold text-sm cursor-pointer">
+              Login
+            </button>
+          </Link>
+
+          <Link to="/signup" className="w-full">
+            <button className="w-full rounded-md border border-[#2C333F] bg-[#161D29] py-3.5 text-[#AFB2BF] font-semibold text-sm cursor-pointer">
+              Signup
+            </button>
+          </Link>
+        </>
+      )}
+
+      {token !== null && user && (
+        <div className="flex flex-col gap-2 w-full text-left">
+          
+          <div className="flex items-center gap-x-3 px-3 py-2.5 bg-zinc-900 rounded-lg mb-2 border border-zinc-800">
+            <img
+              src={user?.image}
+              alt={`profile-${user?.firstName}`}
+              className="aspect-square w-8 rounded-full object-cover border border-zinc-700"
+            />
+
+            <span className="text-sm font-semibold text-zinc-200 truncate flex-1">
+              {user?.firstName} {user?.lastName}
+            </span>
+          </div>
+
+          <Link
+            to="/dashboard/my-profile"
+            className="flex items-center gap-x-2 py-2.5 px-3 text-sm text-[#AFB2BF] hover:bg-[#2C333F] rounded-md transition-all"
+          >
+            <VscDashboard className="text-lg text-yellow-400" />
+            Dashboard
+          </Link>
+
+          <button
+            onClick={() => dispatch(logout(navigate))}
+            className="flex items-center gap-x-2 py-2.5 px-3 text-sm text-[#AFB2BF] hover:bg-rose-950/40 hover:text-rose-400 rounded-md transition-all text-left w-full"
+          >
+            <VscSignOut className="text-lg text-rose-500" />
+            Logout
+          </button>
+        </div>
+      )}
+    </li>
+  </ul>
+</nav>
+
+        {/* 3. TOP STICKY CONTROLS AREA */}
         <div className="flex items-center gap-x-3 md:gap-x-4 z-[1010]">
           
-          {/* Cart Control - Dono screens par upar top bar me visible rahega */}
+          {/* Cart Control */}
           {user && user?.accountType !== "Instructor" && (
             <Link to="/dashboard/cart" className="relative p-1.5 group">
               <TiShoppingCart className="h-6 w-6 md:h-7 md:w-7 fill-[#DBDDEA] group-hover:fill-yellow-300 transition-colors" />
@@ -258,7 +314,7 @@ const NavBar = () => {
             </div>
           )}
 
-          {/* Mobile Hamburger Toggle Action Button - Always stays on right side of topbar */}
+          {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="block md:hidden text-[#DBDDEA] p-1 focus:outline-none"

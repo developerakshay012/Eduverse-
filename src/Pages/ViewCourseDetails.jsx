@@ -62,11 +62,11 @@ const ViewCourseDetails = () => {
                 
             </div>
 
-                <Footer/>
+               
 
             {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
 
-
+                <Footer/>
         </>
     )
 }
