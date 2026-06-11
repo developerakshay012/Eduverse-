@@ -1,12 +1,8 @@
-// Importing React hook for managing component state
-import { useEffect, useState } from "react"
-// Importing React icon component
+import { useEffect, useRef, useState } from "react"
 import { MdClose } from "react-icons/md"
 import { useSelector } from "react-redux"
 
-// Defining a functional component ChipInput
 export default function ChipInput({
-  // Props to be passed to the component
   label,
   name,
   placeholder,
@@ -17,15 +13,18 @@ export default function ChipInput({
 }) {
   const { editCourse, course } = useSelector((state) => state.course)
 
-  // Setting up state for managing chips array
   const [chips, setChips] = useState([])
+  const inputRef = useRef(null)
 
   useEffect(() => {
     if (editCourse) {
-      // console.log(course)
-      setChips(course?.tag)
+      setChips(course?.tag || [])
     }
-    register(name, { required: true, validate: (value) => value.length > 0 })
+
+    register(name, {
+      required: true,
+      validate: (value) => value.length > 0,
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -34,49 +33,61 @@ export default function ChipInput({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chips])
 
-  // Function to handle user input when chips are added
+  // Add chip function
+  const handleAddChip = (value) => {
+    const chipValue = value.trim()
+
+    if (chipValue && !chips.includes(chipValue)) {
+      setChips([...chips, chipValue])
+      return true
+    }
+
+    return false
+  }
+
+  // Enter or comma key support
   const handleKeyDown = (event) => {
-    // Check if user presses "Enter" or ","
     if (event.key === "Enter" || event.key === ",") {
-      // Prevent the default behavior of the event
       event.preventDefault()
-      // Get the input value and remove any leading/trailing spaces
-      const chipValue = event.target.value.trim()
-      // Check if the input value exists and is not already in the chips array
-      if (chipValue && !chips.includes(chipValue)) {
-        // Add the chip to the array and clear the input
-        const newChips = [...chips, chipValue]
-        setChips(newChips)
+
+      if (handleAddChip(event.target.value)) {
         event.target.value = ""
       }
     }
   }
 
-  // Function to handle deletion of a chip
+  // Add button support
+  const handleAddButtonClick = () => {
+    if (!inputRef.current) return
+
+    if (handleAddChip(inputRef.current.value)) {
+      inputRef.current.value = ""
+      inputRef.current.focus()
+    }
+  }
+
+  // Delete chip
   const handleDeleteChip = (chipIndex) => {
-    // Filter the chips array to remove the chip with the given index
     const newChips = chips.filter((_, index) => index !== chipIndex)
     setChips(newChips)
   }
 
-  // Render the component
   return (
-    <div className="flex flex-col space-y-2 cursor-pointer">
-      {/* Render the label for the input */}
+    <div className="flex flex-col space-y-2">
+      {/* Label */}
       <label className="text-sm text-[#AFB2BF]" htmlFor={name}>
         {label} <sup className="text-pink-600">*</sup>
       </label>
-      {/* Render the chips and input */}
-      <div className="flex w-full flex-wrap gap-y-2">
-        {/* Map over the chips array and render each chip */}
+
+      {/* Chips */}
+      <div className="flex flex-wrap gap-2">
         {chips.map((chip, index) => (
           <div
             key={index}
-            className="m-1 flex items-center rounded-full bg-yellow-400 px-2 py-1 text-sm text-white"
+            className="flex items-center rounded-full bg-yellow-400 px-3 py-1 text-sm text-white"
           >
-            {/* Render the chip value */}
-            {chip}
-            {/* Render the button to delete the chip */}
+            <span>{chip}</span>
+
             <button
               type="button"
               className="ml-2 focus:outline-none"
@@ -86,17 +97,30 @@ export default function ChipInput({
             </button>
           </div>
         ))}
-        {/* Render the input for adding new chips */}
+      </div>
+
+      {/* Input + Add Button */}
+      <div className="flex flex-col gap-2 sm:flex-row">
         <input
+          ref={inputRef}
           id={name}
           name={name}
           type="text"
           placeholder={placeholder}
           onKeyDown={handleKeyDown}
-          className="form-style w-full"
+          className="form-style flex-1"
         />
+
+        <button
+          type="button"
+          onClick={handleAddButtonClick}
+          className="rounded-md bg-yellow-400 px-4 py-2 font-medium text-white transition-all duration-200 hover:bg-yellow-500"
+        >
+          Add
+        </button>
       </div>
-      {/* Render an error message if the input is required and not filled */}
+
+      {/* Error */}
       {errors[name] && (
         <span className="ml-2 text-xs tracking-wide text-pink-600">
           {label} is required
