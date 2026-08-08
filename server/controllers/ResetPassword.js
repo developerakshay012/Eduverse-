@@ -30,7 +30,7 @@ export const resetPasswordToken = async (req, res) => {
 		);
 		console.log("DETAILS", updatedDetails);
 
-		const url = `https://eduverse-v1st.vercel.app/update-password/${token}`
+		const url = `http://localhost:5173/update-password/${token}`
 
 		await mailSender(
 			email,
